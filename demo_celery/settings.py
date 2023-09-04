@@ -126,9 +126,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CELERY_TIMEZONE = "Asia/Kolkata"
 CELERY_BROKER_URL = "redis://127.0.0.1:6379/0"
 
-CELERY_BEAT_SCHEDULE = {
-    'every 15 seconds':{
-        'task':'demo_celery.celery.say',
-        'schedule':15
-    }
-}

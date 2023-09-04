@@ -25,6 +25,13 @@ def add(x,y):
 @app.task
 def say():
     print ("Happy Birthday!!!")
+    
+app.conf.beat_schedule = {
+        'every 15 seconds':{
+        'task':'demo_celery.celery.say',
+        'schedule':15
+    }
+}
 
 
 @app.task(bind=True, ignore_result=True)
