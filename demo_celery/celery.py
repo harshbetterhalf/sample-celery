@@ -22,6 +22,10 @@ def add(x,y):
     sleep(20)
     return x+y
 
+@app.task
+def say():
+    print ("Happy Birthday!!!")
+
 
 @app.task(bind=True, ignore_result=True)
 def debug_task(self):
